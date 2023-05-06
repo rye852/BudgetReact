@@ -1,0 +1,92 @@
+const navigate = useNavigate();
+hidden={budgets.length < 2} 
+LeForm return un object ou il ya request et se la contien => {
+  nameOfinput: valueOfInput
+}
+navigate(-1)
+new Way to use React Router 
+const exestingBudgets = fatchData('budgets') ?? [] si null ou undefiend return []
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<LayOut />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="help" element={<Help />}>
+          <Route path="faq" element={<Faq />} />
+          <Route path="contact" element={<Contact />} />
+      </Route>
+    </Route>
+  )
+);
+<RouterProvider router={router} />
+
+
+******Loader******
+
+export const careersLoader = async () => { // function normale
+  const response = await fetch('http://localhost:4000/careers');
+  return response.json();
+};
+
+<Route index loader={careersLoader} element={<Creesrs />} /> //  passer des donnes qui se execute avant que le comp soi mise en page
+
+const data = useLoaderData() // les donnes seront executer avant que le load se termine
+
+
+useParams() ==> un object avec les params savoir le parametre du URL   
+export const loaderCareer = async ({params}) => { // params est l'object
+  const {id} = params
+} 
+
+<Route
+    path=":id"
+    errorElement={<CareerErrore />}  // quand y'a un errore throw il le passe + il fait cette page
+    loader={loaderCareer}
+    element={<Careesr />}
+/>
+
+const error = useRouteError(); // rameb les Errore throw dans un autr Route
+
+const location = useLocation(); // data sur le current lien
+
+<Form method="post" action="/help/contact" >envoi les donner a action
+
+export const contactAction = async ({ request }) => {
+  const data = await request.formData();
+
+  const submission = {
+    email: data.get('email'), // name='email'
+    message: data.get('message'),
+  };
+
+    if (!submission.message.length >= 10) return Errore('must be over than 10')
+
+  console.log(submission) // object avec email et message
+
+  return redirect('/'); // le renvoiyer a '/'
+};
+
+export const dashBoardAction = async ({request}) => {
+  const data = await request.formData()
+}
+************************************************
+
+const actionData = useActionData(); // ramene data qui vient de action pour detecter le errore dans ce cas
+
+if (!user) return <Navigate to='/' replace={true}/> // c'est obligue le return 
+
+replace // donc comme si il' ete pas dans l'historique
+
+
+
+const {_action, ...value} = Object.fromEntries(data); 
+// le nom de hidden input 
+                                                      
+// et les valeur des autre input sous forme d'object
+
+const fetcher = useFetcher();
+
+fetcher.status ==> le Form submitting loading etc..
+
+budgetLoader({params}) => useParams() integrer
